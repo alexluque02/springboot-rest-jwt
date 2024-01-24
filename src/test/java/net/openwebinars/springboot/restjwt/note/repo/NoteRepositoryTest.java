@@ -1,5 +1,6 @@
 package net.openwebinars.springboot.restjwt.note.repo;
 
+import net.openwebinars.springboot.restjwt.note.model.Note;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -11,6 +12,8 @@ import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 import org.testcontainers.utility.DockerImageName;
+
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -34,6 +37,8 @@ class NoteRepositoryTest {
 
     @Test
     void findByAuthor() {
-
+        List<Note> notes = noteRepository.findByAuthor("c7dd2c8f-260b-4f61-9c3c-3d29e4c67735");
+        notes.forEach(System.out::println);
+        assertEquals(3, notes.size());
     }
 }

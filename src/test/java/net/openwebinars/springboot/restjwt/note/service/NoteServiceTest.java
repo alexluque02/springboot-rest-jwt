@@ -61,12 +61,8 @@ class NoteServiceTest {
                 .build();
 
         List <Note> notes = List.of(note1, note2, note3, note4);
-
         Mockito.when(noteRepository.findByAuthor(user1.getId().toString())).thenReturn(notes);
-
         List<NotesGroupedByTagsDto> result = noteService.notesGroupedByTagsDtoList(user1.getId().toString());
-
-
         assertEquals(result.size(), 3);
 
     }
@@ -76,13 +72,9 @@ class NoteServiceTest {
     void notesGroupedByTagsDtoListNotesIsEmpty() {
         User user1 = new User();
         user1.setId(UUID.fromString("349b55cd-bf00-4a7f-995a-226149312079"));
-
         List <Note> notes = new ArrayList<>();
-
         Mockito.when(noteRepository.findByAuthor(user1.getId().toString())).thenReturn(notes);
-
         List<NotesGroupedByTagsDto> result = noteService.notesGroupedByTagsDtoList(user1.getId().toString());
-
         assertNull(result);
     }
 }

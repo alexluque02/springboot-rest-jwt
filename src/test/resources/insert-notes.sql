@@ -1,4 +1,11 @@
 INSERT INTO user_entity (id, username, password, avatar, full_name, account_non_expired, account_non_locked, credentials_non_expired, enabled, created_at, last_password_change_at) VALUES ('c7dd2c8f-260b-4f61-9c3c-3d29e4c67735','alex','1234','ruta_a_tu_avatar','Alex Luque',true, true,  true,  true, '2022-01-19T12:34:56', '2022-01-19T12:34:56');
-INSERT INTO note (title, content, author, important, tags, created_at) VALUES ('Nota Importante', 'Contenido de la nota importante', 'c7dd2c8f-260b-4f61-9c3c-3d29e4c67735', true, ARRAY['tag1', 'tag2'], '2022-01-19T12:34:56');
-INSERT INTO note (title, content, author, important, tags, created_at)  VALUES ('Nota Normal', 'Contenido de la nota normal', 'c7dd2c8f-260b-4f61-9c3c-3d29e4c67735', false, ARRAY['tag3', 'tag4'], '2022-01-20T09:45:00');
-INSERT INTO note (title, content, author, important, tags, created_at)  VALUES ('Otra Nota', 'Contenido de otra nota', 'c7dd2c8f-260b-4f61-9c3c-3d29e4c67735', true, ARRAY['tag5', 'tag6'], '2022-01-21T15:30:00');
+INSERT INTO note (id, title, content, author, important, created_at) VALUES (1, 'Nota Importante', 'Contenido de la nota importante', 'c7dd2c8f-260b-4f61-9c3c-3d29e4c67735', true, '2022-01-19T12:34:56');
+INSERT INTO note (id, title, content, author, important, created_at)  VALUES (2, 'Nota Normal', 'Contenido de la nota normal', 'c7dd2c8f-260b-4f61-9c3c-3d29e4c67735', false, '2022-01-20T09:45:00');
+INSERT INTO note (id, title, content, author, important, created_at)  VALUES (3, 'Otra Nota', 'Contenido de otra nota', 'c7dd2c8f-260b-4f61-9c3c-3d29e4c67735', true, '2022-01-21T15:30:00');
+INSERT INTO note_tags (note_id, tags) VALUES (1, 'TAG1');
+INSERT INTO note_tags (note_id, tags) VALUES (1, 'TAG2');
+INSERT INTO note_tags (note_id, tags) VALUES (2, 'TAG3');
+INSERT INTO note_tags (note_id, tags) VALUES (2, 'TAG1');
+INSERT INTO note_tags (note_id, tags) VALUES (3, 'TAG1');
+INSERT INTO note_tags (note_id, tags) VALUES (3, 'TAG4');
+INSERT INTO note_tags (note_id, tags) VALUES (3, 'TAG5');
